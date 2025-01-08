@@ -17,8 +17,10 @@
 const mongoose = require('mongoose');
 
 // MongoDB URL
-const mongoURL = 'mongodb://127.0.0.1:27017/vedant'; // MongoDB URL
+//const mongoURL = 'mongodb://127.0.0.1:27017/vedant'; // MongoDB URL local
 
+require('dotenv').config(); 
+const mongoURL=process.env.MONGODB_URL;
 // Connect to MongoDB
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
